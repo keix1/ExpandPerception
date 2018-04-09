@@ -4,9 +4,14 @@
 </head>
 <body>
 <p>This is {{app}} test. ok?</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="送信"/>
+</form>
 <p>
-{% for i in num %}
-{{ i }}<br>
+{% for i in view_list %}
+<a href={{i.1}}> {{i.0}} </a><br>
 {% endfor %}
 </p>
 </body>
